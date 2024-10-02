@@ -213,8 +213,7 @@ router.post('/reset-password', async (req, res) => {
 
 
 // Signup Route
-//router.post('/signup', async (req, res) => {
-router.post('/auth/signup', async (req, res) => {
+router.post('/signup', async (req, res) => {
     const { username, email, password } = req.body;
 
     // Check if user already exists
@@ -242,8 +241,7 @@ router.post('/auth/signup', async (req, res) => {
 });
 
 // Login Route
-//router.post('/login', async (req, res) => {
-router.post('/auth/login', async (req, res) => {
+router.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
     // Check if user exists

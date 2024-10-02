@@ -7,7 +7,7 @@ document.getElementById('login').addEventListener('submit', async function (e) {
     const password = document.querySelector('#login input[type="password"]').value;
 
     // const response = await fetch('/auth/login', {
-    const response = await fetch('https://signup-login-zeta.vercel.app//auth/login', {
+    const response = await fetch('https://signup-login-zeta.vercel.app/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
@@ -38,7 +38,7 @@ document.getElementById('signup').addEventListener('submit', async function (e) 
     const password = document.querySelector('#signup input[type="password"]').value;
 
     // const response = await fetch('/auth/signup', {
-        const response = await fetch('https://signup-login-zeta.vercel.app//auth/signup', {
+        const response = await fetch('https://signup-login-zeta.vercel.app/auth/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, email, password })
@@ -210,7 +210,7 @@ document.getElementById('forgot-password-form').addEventListener('submit', async
 
     try {
         //const response = await fetch('/auth/forgot-password', {
-        const response = await fetch('https://signup-login-zeta.vercel.app//auth/forgot-password', {
+        const response = await fetch('https://signup-login-zeta.vercel.app/auth/forgot-password', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

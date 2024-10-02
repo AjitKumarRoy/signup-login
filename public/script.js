@@ -2,12 +2,11 @@
 // Login form event listener
 document.getElementById('login').addEventListener('submit', async function (e) {
     e.preventDefault();
-
+    
     const email = document.querySelector('#login input[type="text"]').value;
     const password = document.querySelector('#login input[type="password"]').value;
 
-    // const response = await fetch('/auth/login', {
-    const response = await fetch('https://signup-login-production.up.railway.app/auth/login', {
+    const response = await fetch('/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
@@ -22,9 +21,9 @@ document.getElementById('login').addEventListener('submit', async function (e) {
     }
 
 
-    // Clear the input fields
-    document.querySelector('#login input[type="text"]').value = '';
-    document.querySelector('#login input[type="password"]').value = '';
+     // Clear the input fields
+     document.querySelector('#login input[type="text"]').value = '';
+     document.querySelector('#login input[type="password"]').value = '';
 });
 
 
@@ -37,8 +36,7 @@ document.getElementById('signup').addEventListener('submit', async function (e) 
     const email = document.querySelector('#signup input[type="email"]').value;
     const password = document.querySelector('#signup input[type="password"]').value;
 
-    // const response = await fetch('/auth/signup', {
-        const response = await fetch('https://signup-login-production.up.railway.app/auth/signup', {
+    const response = await fetch('/auth/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, email, password })
@@ -54,10 +52,10 @@ document.getElementById('signup').addEventListener('submit', async function (e) 
     }
 
 
-    // Clear the input fields
-    document.querySelector('#signup input[type="text"]').value = '';
-    document.querySelector('#signup input[type="email"]').value = '';
-    document.querySelector('#signup input[type="password"]').value = '';
+       // Clear the input fields
+       document.querySelector('#signup input[type="text"]').value = '';
+       document.querySelector('#signup input[type="email"]').value = '';
+       document.querySelector('#signup input[type="password"]').value = '';
 });
 
 
@@ -159,12 +157,11 @@ function login() {
 
 document.getElementById('login').addEventListener('submit', async function (e) {
     e.preventDefault();
-
+    
     const email = document.querySelector('#login input[type="text"]').value;
     const password = document.querySelector('#login input[type="password"]').value;
 
-    //const response = await fetch('/auth/login', {
-    const response = await fetch('https://signup-login-production.up.railway.app/auth/login', {
+    const response = await fetch('/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
@@ -192,7 +189,7 @@ document.getElementById('login').addEventListener('submit', async function (e) {
 // // In your routes file
 // app.post('/auth/forgot-password', async (req, res) => {
 //     const { email } = req.body;
-
+  
 //     // Call the function to send the email
 //     try {
 //       await sendPasswordResetEmail(email);
@@ -209,8 +206,7 @@ document.getElementById('forgot-password-form').addEventListener('submit', async
     const email = document.getElementById('email').value;
 
     try {
-        //const response = await fetch('/auth/forgot-password', {
-        const response = await fetch('https://signup-login-production.up.railway.app/auth/forgot-password', {
+        const response = await fetch('/auth/forgot-password', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -250,41 +246,41 @@ const link = document.getElementById('forgot-password-link');
 const span = document.getElementsByClassName('close')[0];
 
 // When the user clicks the link, open the modal
-link.onclick = function (event) {
-    event.preventDefault();
-    modal.style.display = 'flex'; // show the modal
+link.onclick = function(event) {
+  event.preventDefault();
+  modal.style.display = 'flex'; // show the modal
 };
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-    modal.style.display = 'none';
+span.onclick = function() {
+  modal.style.display = 'none';
 };
 
 // When the user clicks anywhere outside the modal, close it
-window.onclick = function (event) {
-    if (event.target === modal) {
-        modal.style.display = 'none';
-    }
+window.onclick = function(event) {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
 };
 
 // Form submission handling
-document.getElementById('forgot-password-form').addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    const email = document.getElementById('email').value;
-    const messageDiv = document.getElementById('message');
-
-    // Simulate sending email
-    messageDiv.textContent = 'Reset link sent to ' + email;
-
-    // Close the modal after 2 seconds
-    setTimeout(() => {
-        modal.style.display = 'none';
-        messageDiv.textContent = ''; // Reset message
-    }, 2000);
+document.getElementById('forgot-password-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  
+  const email = document.getElementById('email').value;
+  const messageDiv = document.getElementById('message');
+  
+  // Simulate sending email
+  messageDiv.textContent = 'Reset link sent to ' + email;
+  
+  // Close the modal after 2 seconds
+  setTimeout(() => {
+    modal.style.display = 'none';
+    messageDiv.textContent = ''; // Reset message
+  }, 2000);
 });
 
 
-
+  
 
 

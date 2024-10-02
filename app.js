@@ -1,11 +1,14 @@
+const dotenv = require('dotenv');
+dotenv.config();
 const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/auth');
 const verifyToken = require('./middlewares/verifyToken'); // Adjust the path if necessary
 const User = require('./models/User'); // Import the User model
 const path = require('path'); // Import path module
-
 const app = express();
+
+
 
 //This middleware ensures that form data is properly parsed.
 app.use(express.urlencoded({ extended: true }));
@@ -24,10 +27,18 @@ app.get('/login', (req, res) => {
 });
 
 
-// MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/signupApp')
+// // MongoDB Connection
+// mongoose.connect('mongodb://localhost:27017/signupApp')
+//     .then(() => console.log('MongoDB Connected'))
+//     .catch(err => console.log('MongoDB Connection Error: ', err));
+
+
+// MongoDB Atlas Connection
+mongoose.connect(process.env.DB_URI)
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.log('MongoDB Connection Error: ', err));
+
+
 
 // Routes
 app.use('/auth', authRoutes);
